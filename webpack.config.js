@@ -34,15 +34,15 @@ const optimization = () => {
 const plugins = () => {
   const basePlugins = [
   new HTMLWebpackPlugin({
-    template: path.resolve(__dirname, 'src/tpl/pages/index/index.pug'),
+    template: path.resolve(__dirname, 'src/index.html'),
     filename: 'index.html',
     minify: false
   }),
-  new HTMLWebpackPlugin({
-    template: path.resolve(__dirname, 'src/tpl/pages/blog/blog.pug'),
-    filename: 'blog.html',
-    minify: false
-  }),
+  // new HTMLWebpackPlugin({
+  //   template: path.resolve(__dirname, 'src/tpl/pages/blog/blog.pug'),
+  //   filename: 'blog.html',
+  //   minify: false
+  // }),
   new CleanWebpackPlugin(),
   new MiniCssExtractPlugin({
     filename: `./css/${filename('css')}`,
@@ -89,8 +89,8 @@ module.exports = {
   mode: 'development',
   entry: {
     'main': './js/main.js',
-    'index': './tpl/pages/index/index.js',
-    'blog': './tpl/pages/blog/blog.js',
+    // 'index': './tpl/pages/index/index.js',
+    // 'blog': './tpl/pages/blog/blog.js',
   },
   output: {
     filename: `./js/${filename('js')}`,
